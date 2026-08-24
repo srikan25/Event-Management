@@ -1,0 +1,128 @@
+.contribution-details-modal {
+  width: 100%;
+  max-width: 440px;
+  max-height: 85vh;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-radius: 18px 18px 12px 12px;
+
+  overflow-y: auto;
+}
+
+.contribution-details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.contribution-details-header h2 {
+  margin: 0;
+
+  color: #222;
+
+  font-size: 18px;
+}
+
+.contribution-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contribution-info-row {
+  padding: 11px 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.contribution-info-row > span {
+  flex-shrink: 0;
+
+  color: #888;
+
+  font-size: 10px;
+}
+
+.contribution-info-row > strong {
+  color: #222;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-align: right;
+}
+
+.contribution-description-row {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contribution-description-row > strong {
+  line-height: 1.5;
+  text-align: left;
+}
+
+.contribution-details-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.contribution-delete-button,
+.contribution-edit-button,
+.contribution-cancel-button {
+  padding: 11px;
+
+  border: 0;
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.contribution-delete-button {
+  background: #fff0f0;
+  color: #c62828;
+}
+.contribution-delete-button:active {
+  transform: scale(0.98);
+}
+.contribution-delete-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contribution-edit-button {
+  background: #08783c;
+  color: #ffffff;
+}
+
+.contribution-edit-button:active {
+  transform: scale(0.98);
+}
+
+.contribution-edit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contribution-cancel-button {
+  background: #f0f0f0;
+  color: #555;
+}

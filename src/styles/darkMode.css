@@ -1,0 +1,283 @@
+body.dark-mode {
+  background: #121212;
+  color: #f2f2f2;
+}
+
+body.dark-mode .main-app {
+  background: #121212;
+}
+
+/* Header stays green but slightly deeper */
+body.dark-mode .main-header {
+  background: #075f32;
+  color: #ffffff;
+}
+
+/* General pages */
+body.dark-mode .main-content,
+body.dark-mode .all-contributions-page,
+body.dark-mode .special-contributions-page,
+body.dark-mode .all-expenses-page,
+body.dark-mode .no-event-state {
+  background: #121212;
+  color: #f2f2f2;
+}
+
+body.dark-mode .main-header {
+  background: #030a05;
+}
+
+/* Dashboard cards */
+body.dark-mode .dashboard-card,
+body.dark-mode .summary-card,
+body.dark-mode .expense-item {
+  color: #f2f2f2;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Keep card identities in dark mode */
+body.dark-mode .contributions-card {
+  background: #2b211c;
+  border-color: #6d4b38;
+}
+
+body.dark-mode .special-card {
+  background: #241f2d;
+  border-color: #57436f;
+}
+
+body.dark-mode .previous-balance-card {
+  background: #182532;
+  border-color: #3c6385;
+}
+
+body.dark-mode .total-contributions-card {
+  background: #18291f;
+  border-color: #3f7050;
+}
+
+/* Headings / text */
+body.dark-mode .card-heading h3,
+body.dark-mode .summary-card h3,
+body.dark-mode .expenses-heading h2,
+body.dark-mode .expense-details strong,
+body.dark-mode .contribution-name,
+body.dark-mode .contribution-number,
+body.dark-mode .contribution-amount,
+body.dark-mode .sc-name,
+body.dark-mode .sc-number,
+body.dark-mode .previous-balance-card strong,
+body.dark-mode .special-contribution-name,
+body.dark-mode .total-contributions-card strong,
+body.dark-mode .all-contribution-details strong,
+body.dark-mode .special-page-details strong,
+body.dark-mode .all-expense-details strong {
+  color: #f0f0f0;
+}
+
+body.dark-mode .summary-card span,
+body.dark-mode .expense-details span,
+body.dark-mode .expense-description,
+body.dark-mode .sc-item,
+body.dark-mode .special-page-date,
+body.dark-mode .all-contribution-details span,
+body.dark-mode .all-expense-date,
+body.dark-mode .all-expense-category,
+body.dark-mode .contributors-header h2,
+body.dark-mode .all-contributions-total span,
+body.dark-mode .dashboard-expense-total span,
+body.dark-mode .special-page-title h2 {
+  color: #aaaaaa;
+}
+
+/* List pages */
+body.dark-mode .all-contribution-item,
+body.dark-mode .special-page-item,
+body.dark-mode .all-expense-item,
+body.dark-mode .expense-item,
+body.dark-mode .expense-icon,
+body.dark-mode .previous-balance-delete,
+body.dark-mode .previous-balance-add-form {
+  background: #1d1d1d;
+  border-color: #333333;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .all-contribution-item:hover,
+body.dark-mode .special-page-item:hover,
+body.dark-mode .all-expense-item:hover {
+  border-color: #4a4a4a;
+}
+
+/* Search */
+body.dark-mode .contribution-search {
+  background: #1d1d1d;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .contribution-search input {
+  color: #f2f2f2;
+}
+
+body.dark-mode .contribution-search input::placeholder {
+  color: #777777;
+}
+
+/* Empty states */
+body.dark-mode .empty-card-message,
+body.dark-mode .empty-expenses-message,
+body.dark-mode .all-contributions-empty,
+body.dark-mode .special-page-empty,
+body.dark-mode .all-expenses-empty,
+body.dark-mode .previous-balance-empty {
+  background: #1a1a1a;
+  color: #aaaaaa;
+  border-color: #343434;
+}
+
+/* Menu / profile */
+body.dark-mode .side-menu,
+body.dark-mode .profile-menu {
+  background: #1b1b1b;
+  color: #f2f2f2;
+}
+
+body.dark-mode .theme-row {
+  border-color: #333333;
+}
+
+body.dark-mode .event-menu-item {
+  color: #eeeeee;
+}
+
+body.dark-mode .event-row.active-event,
+body.dark-mode .event-menu-item.active-event {
+  background: #173825;
+  color: #95ddb0;
+}
+
+body.dark-mode .create-event-button {
+  background: #173825;
+  color: #95ddb0;
+  border-color: #488d61;
+}
+
+/* All modals */
+body.dark-mode .event-modal,
+body.dark-mode .edit-event-modal,
+body.dark-mode .password-modal,
+body.dark-mode .contribution-modal,
+body.dark-mode .previous-balance-modal,
+body.dark-mode .total-contributions-modal,
+body.dark-mode .expense-details-modal,
+body.dark-mode .contribution-details-modal,
+body.dark-mode .special-details-modal {
+  background: #1d1d1d;
+  color: #f2f2f2;
+}
+
+/* Modal headings */
+body.dark-mode .event-modal-header h2,
+body.dark-mode .edit-event-header h2,
+body.dark-mode .password-modal-header h2,
+body.dark-mode .previous-balance-header h2,
+body.dark-mode .total-contributions-modal-header h2,
+body.dark-mode .expense-details-header h2,
+body.dark-mode .contribution-details-header h2,
+body.dark-mode .special-details-header h2 {
+  color: #f2f2f2;
+}
+
+/* Inputs */
+body.dark-mode .event-form-field label {
+  color: #dddddd;
+}
+
+body.dark-mode .event-form-field input,
+body.dark-mode .event-form-field textarea,
+body.dark-mode .event-form-field select {
+  background: #262626;
+  color: #f2f2f2;
+
+  border-color: #444444;
+}
+
+body.dark-mode .event-form-field input::placeholder,
+body.dark-mode .event-form-field textarea::placeholder {
+  color: #777777;
+}
+
+body.dark-mode .event-form-field input:focus,
+body.dark-mode .event-form-field textarea:focus,
+body.dark-mode .event-form-field select:focus {
+  border-color: #4eaa70;
+
+  box-shadow: 0 0 0 3px rgba(78, 170, 112, 0.12);
+}
+
+/* Previous balance list */
+body.dark-mode .previous-balance-item {
+  background: #252525;
+  border-color: #383838;
+}
+
+body.dark-mode .previous-balance-person strong {
+  color: #eeeeee;
+}
+
+body.dark-mode .previous-balance-person span {
+  color: #aaaaaa;
+}
+
+/* Details rows */
+body.dark-mode .expense-info-row,
+body.dark-mode .contribution-info-row,
+body.dark-mode .special-info-row {
+  border-color: #333333;
+}
+
+body.dark-mode .expense-info-row > strong,
+body.dark-mode .contribution-info-row > strong,
+body.dark-mode .special-info-row > strong {
+  color: #eeeeee;
+}
+
+body.dark-mode .expense-info-row > span,
+body.dark-mode .contribution-info-row > span,
+body.dark-mode .special-info-row > span {
+  color: #999999;
+}
+
+/* Table modal */
+body.dark-mode .total-contributions-table-header {
+  border-color: #3a3a3a;
+  color: #aaaaaa;
+}
+
+body.dark-mode .total-contribution-row {
+  border-color: #333333;
+}
+
+/* Back arrows */
+body.dark-mode .back-button,
+body.dark-mode .special-back-button,
+body.dark-mode .all-expenses-back-button {
+  color: #ffffff;
+}
+
+/* Close buttons */
+body.dark-mode .modal-close-button {
+  background: #2c2c2c;
+  color: #dddddd;
+}
+
+/* Secondary buttons */
+body.dark-mode .event-cancel-button,
+body.dark-mode .contribution-cancel-button,
+body.dark-mode .special-cancel-button,
+body.dark-mode .expense-cancel-button {
+  background: #303030;
+  color: #dddddd;
+}

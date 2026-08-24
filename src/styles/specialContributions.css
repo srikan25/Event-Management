@@ -1,0 +1,281 @@
+.special-contributions-page {
+  width: 100%;
+  max-width: 720px;
+  min-height: calc(100vh - 80px);
+
+  margin: 0 auto;
+  padding: 18px 16px 90px;
+}
+
+/* Header */
+
+.special-page-header {
+  position: relative;
+
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+.special-back-button {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  background: transparent;
+  color: #222;
+
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.special-page-title {
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+.special-page-title h2 {
+  margin: 0;
+
+  color: #222;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Download */
+
+.special-download-button {
+  margin-left: auto;
+
+  width: 54px;
+  min-height: 42px;
+
+  padding: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+
+  border: 0;
+
+  background: transparent;
+  color: #08783c;
+
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.special-download-button svg {
+  font-size: 17px;
+}
+
+.special-download-button span {
+  font-size: 7px;
+  font-weight: 500;
+}
+
+/* List */
+
+.special-page-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.special-page-item {
+  width: 99%;
+
+  padding: 10px 12px;
+
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) minmax(70px, auto) 14px;
+  align-items: center;
+  gap: 7px;
+
+  border: 1px solid #e6e0ee;
+  border-radius: 10px;
+
+  background: #fbf8ff;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.045);
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.special-page-number {
+  color: #777;
+
+  font-size: 10px;
+}
+
+.special-page-details {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.special-page-details strong {
+  overflow: hidden;
+
+  color: #222;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.special-page-date {
+  color: #999;
+
+  font-size: 8.5px;
+}
+
+.special-page-contribution {
+  min-width: 80px;
+  max-width: 120px;
+
+  overflow: hidden;
+
+  color: #6941b7;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  text-align: right;
+}
+
+.special-page-arrow {
+  color: #aaa;
+
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* Empty */
+
+.special-page-empty {
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border: 1px dashed #ddd5ea;
+  border-radius: 11px;
+
+  background: #fcfaff;
+
+  color: #888;
+
+  text-align: center;
+}
+
+.special-page-empty strong {
+  font-size: 12px;
+}
+
+.special-page-empty span {
+  font-size: 10px;
+}
+
+/* Add */
+
+.special-page-add-button {
+  position: fixed;
+
+  right: max(16px, calc((100vw - 720px) / 2 + 18px));
+  bottom: clamp(16px, 3vh, 26px);
+
+  width: clamp(44px, 7vw, 50px);
+  height: clamp(44px, 7vw, 50px);
+
+  padding: 0 0 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #6941b7;
+  color: #fff;
+
+  font-size: clamp(26px, 4vw, 31px);
+  line-height: 1;
+
+  box-shadow: 0 5px 14px rgba(105, 65, 183, 0.24);
+
+  cursor: pointer;
+
+  z-index: 30;
+}
+.special-page-add-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.special-page-add-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .special-contributions-page {
+    padding: 14px 12px 85px;
+  }
+
+  .special-download-button {
+    width: 46px;
+    min-height: 40px;
+  }
+
+  .special-download-button svg {
+    font-size: 15px;
+  }
+
+  .special-download-button span {
+    font-size: 6.5px;
+  }
+
+  .special-page-add-button {
+    right: 16px;
+    bottom: 18px;
+  }
+}

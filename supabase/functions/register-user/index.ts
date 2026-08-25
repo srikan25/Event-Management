@@ -1,10 +1,18 @@
 import "@supabase/functions-js/edge-runtime.d.ts";
 import { withSupabase } from "@supabase/server";
 
-export default {
-  fetch: withSupabase(
-    { auth: ["publishable"] },
+import type { Database } from "../../database.types.ts";
 
+type RegisterRequestBody = {
+  name: string;
+  email: string;
+  password: string;
+  organizerPassword: string;
+};
+
+export default {
+  fetch: withSupabase<Database>(
+    { auth: ["publishable"] },
     async (req, ctx) => {
       try {
         const {
@@ -12,7 +20,7 @@ export default {
           email,
           password,
           organizerPassword,
-        } = await req.json();
+        } = (await req.json()) as RegisterRequestBody;
 
         // Basic validation
         if (!name?.trim()) {
@@ -62,8 +70,7 @@ export default {
         if (organizerPassword.length < 6) {
           return Response.json(
             {
-              error:
-                "Organizer password must be at least 6 characters.",
+              error: "Organizer password must be at least 6 characters.",
             },
             {
               status: 400,
@@ -73,8 +80,8 @@ export default {
 
         // 1. Create normal Supabase Auth account.
         // This keeps your normal email-verification flow.
-        const { data: signUpData, error: signUpError } =
-          await ctx.supabase.auth.signUp({
+        const { data: signUpData, error: signUpError } = await ctx.supabase.auth
+          .signUp({
             email: email.trim(),
             password,
 
@@ -162,8 +169,7 @@ export default {
 
         return Response.json(
           {
-            error:
-              "Something went wrong while creating your account.",
+            error: "Something went wrong while creating your account.",
           },
           {
             status: 500,

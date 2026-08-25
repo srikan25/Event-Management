@@ -96,7 +96,7 @@ function Contributions() {
           <button
             type="button"
             className="back-button"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/")}
             aria-label="Back"
           >
             <FontAwesomeIcon icon={faArrowLeft} />

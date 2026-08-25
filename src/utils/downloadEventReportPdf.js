@@ -74,8 +74,8 @@ export const downloadEventReportPdf = ({
     ],
 
     styles: {
-      fontSize: 9,
-      cellPadding: 3,
+      fontSize: 12,
+      halign: "center",
     },
 
     headStyles: {
@@ -83,8 +83,11 @@ export const downloadEventReportPdf = ({
     },
 
     columnStyles: {
+      0: {
+        cellWidth: 75,
+      },
       1: {
-        halign: "right",
+        cellWidth: 75,
       },
     },
   });
@@ -127,6 +130,14 @@ export const downloadEventReportPdf = ({
     const rows = contributions.map((item, index) => [
       index + 1,
       item.contributor_name,
+      item?.village_name?.trim()
+        ? item?.village_name
+        : {
+            content: "-",
+            styles: {
+              halign: "center",
+            },
+          },
       `Rs. ${Number(item.amount).toLocaleString("en-IN")}`,
       item.contribution_date
         ? new Date(item.contribution_date).toLocaleDateString("en-IN")
@@ -137,23 +148,42 @@ export const downloadEventReportPdf = ({
     autoTable(doc, {
       startY: currentY,
 
-      head: [["S.No", "Contributor", "Amount", "Date", "Description"]],
+      head: [
+        ["S.No", "Contributor", "Village", "Amount", "Date", "Description"],
+      ],
 
       body: rows,
 
       styles: {
-        fontSize: 8,
-        cellPadding: 2.5,
+        fontSize: 9,
+        halign: "center",
+      },
+
+      headStyles: {
+        fontStyle: "bold",
       },
 
       columnStyles: {
         0: {
-          cellWidth: 13,
           halign: "center",
+          cellWidth: 13, // S.No
         },
-
+        1: {
+          cellWidth: 38, // Contributor Name
+        },
         2: {
-          halign: "right",
+          cellWidth: 30, // Village
+        },
+        3: {
+          halign: "center",
+          cellWidth: 30, // Amount
+        },
+        4: {
+          halign: "center",
+          cellWidth: 28, // Date
+        },
+        5: {
+          // Description gets remaining space automatically
         },
       },
     });
@@ -177,6 +207,14 @@ export const downloadEventReportPdf = ({
       index + 1,
       item.contributor_name,
       item.item_name,
+      item.village_name?.trim()
+        ? item.village_name
+        : {
+            content: "-",
+            styles: {
+              halign: "center",
+            },
+          },
       item.contribution_date
         ? new Date(item.contribution_date).toLocaleDateString("en-IN")
         : "-",
@@ -186,13 +224,23 @@ export const downloadEventReportPdf = ({
     autoTable(doc, {
       startY: currentY,
 
-      head: [["S.No", "Contributor", "Contribution", "Date", "Description"]],
+      head: [
+        [
+          "S.No",
+          "Contributor",
+          "Contribution",
+          "Village",
+          "Date",
+          "Description",
+        ],
+      ],
 
       body: rows,
 
       styles: {
         fontSize: 8,
         cellPadding: 2.5,
+        halign: "center",
       },
 
       columnStyles: {
@@ -233,19 +281,12 @@ export const downloadEventReportPdf = ({
       body: rows,
 
       styles: {
-        fontSize: 8,
-        cellPadding: 2.5,
+        fontSize: 12,
+        halign: "center",
       },
 
-      columnStyles: {
-        0: {
-          cellWidth: 13,
-          halign: "center",
-        },
-
-        2: {
-          halign: "right",
-        },
+      headStyles: {
+        fontStyle: "bolder",
       },
     });
 
@@ -292,18 +333,29 @@ export const downloadEventReportPdf = ({
       body: rows,
 
       styles: {
-        fontSize: 7.5,
+        fontSize: 9,
         cellPadding: 2.3,
+        halign: "center",
       },
 
       columnStyles: {
         0: {
-          cellWidth: 12,
-          halign: "center",
+          cellWidth: 13,
+        },
+        1: {
+          cellWidth: 38,
+        },
+
+        2: {
+          cellWidth: 24,
         },
 
         3: {
-          halign: "right",
+          cellWidth: 28,
+        },
+
+        4: {
+          cellWidth: 36,
         },
       },
     });

@@ -23,42 +23,53 @@ export const downloadContributionsPdf = (
   const tableRows = contributions.map((contribution, index) => [
     index + 1,
     contribution.contributor_name,
+    contribution.village_name?.trim() || "-",
     `Rs. ${Number(contribution.amount).toLocaleString("en-IN")}`,
     contribution.contribution_date
       ? new Date(contribution.contribution_date).toLocaleDateString("en-IN")
       : "",
-    contribution.description || "-",
+    contribution.description?.trim() || "-",
   ]);
 
   autoTable(doc, {
     startY: 34,
 
-    head: [["S.No", "Contributor Name", "Amount", "Date", "Description"]],
+    head: [
+      ["S.No", "Contributor Name", "village", "Amount", "Date", "Description"],
+    ],
 
     body: tableRows,
 
     styles: {
       fontSize: 9,
       cellPadding: 3,
+      halign: "center",
     },
 
     headStyles: {
       fontStyle: "bold",
     },
-
     columnStyles: {
       0: {
         halign: "center",
-        cellWidth: 14,
+        cellWidth: 13, // S.No
       },
-
+      1: {
+        cellWidth: 38, // Contributor Name
+      },
       2: {
-        halign: "right",
-        cellWidth: 28,
+        cellWidth: 30, // Village
       },
-
       3: {
-        cellWidth: 28,
+        halign: "center",
+        cellWidth: 30, // Amount
+      },
+      4: {
+        halign: "center",
+        cellWidth: 28, // Date
+      },
+      5: {
+        // Description gets remaining space automatically
       },
     },
   });
@@ -108,6 +119,7 @@ export const downloadSpecialContributionsPdf = (
     index + 1,
     contribution.contributor_name,
     contribution.item_name,
+    contribution.village_name?.trim() || "-",
     contribution.contribution_date
       ? new Date(contribution.contribution_date).toLocaleDateString("en-IN")
       : "",
@@ -117,13 +129,22 @@ export const downloadSpecialContributionsPdf = (
   autoTable(doc, {
     startY: 34,
 
-    head: [["S.No", "Contributor Name", "Contribution", "Date", "Description"]],
+    head: [
+      [
+        "S.No",
+        "Contributor Name",
+        "Contribution",
+        "Village",
+        "Date",
+        "Description",
+      ],
+    ],
 
     body: tableRows,
 
     styles: {
-      fontSize: 9,
-      cellPadding: 3,
+      fontSize: 8.5,
+      halign: "center",
     },
 
     headStyles: {
@@ -133,11 +154,28 @@ export const downloadSpecialContributionsPdf = (
     columnStyles: {
       0: {
         halign: "center",
-        cellWidth: 14,
+        cellWidth: 13, // S.No
+      },
+
+      1: {
+        cellWidth: 36, // Contributor Name
+      },
+
+      2: {
+        cellWidth: 36, // Contribution / Item
       },
 
       3: {
-        cellWidth: 28,
+        cellWidth: 24, // Village
+      },
+
+      4: {
+        halign: "center",
+        cellWidth: 26, // Date
+      },
+
+      5: {
+        // Description gets remaining width
       },
     },
   });
@@ -195,8 +233,8 @@ export const downloadExpensesPdf = (expenses, activeEvent, totalExpenses) => {
     body: rows,
 
     styles: {
-      fontSize: 8,
-      cellPadding: 3,
+      fontSize: 8.5,
+      halign: "center",
     },
 
     headStyles: {
@@ -205,17 +243,22 @@ export const downloadExpensesPdf = (expenses, activeEvent, totalExpenses) => {
 
     columnStyles: {
       0: {
-        halign: "center",
         cellWidth: 13,
+      },
+      1: {
+        cellWidth: 38,
+      },
+
+      2: {
+        cellWidth: 24,
       },
 
       3: {
-        halign: "right",
-        cellWidth: 27,
+        cellWidth: 28,
       },
 
       4: {
-        cellWidth: 35,
+        cellWidth: 36,
       },
     },
   });

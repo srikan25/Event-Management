@@ -91,7 +91,7 @@ function SpecialContributions() {
           <button
             type="button"
             className="special-back-button"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/")}
             aria-label="Back"
           >
             <FontAwesomeIcon icon={faArrowLeft} />

@@ -324,13 +324,6 @@ function Dashboard() {
     );
   }
 
-  const backGroundColorToggleForTotalAmount =
-    Number(availableBalance) > 20000
-      ? "#08783c"
-      : Number(availableBalance) < 6000
-        ? "#E03C2B"
-        : "#9E7815";
-
   if (!activeEvent) {
     return (
       <AppLayout>
@@ -359,16 +352,11 @@ function Dashboard() {
   return (
     <AppLayout>
       {/* Balance */}
-      <section
-        className="balance-section"
-        style={{ background: backGroundColorToggleForTotalAmount }}
-      >
+      <section className="balance-section">
         <p className="balance-label">AVAILABLE BALANCE</p>
 
         <h2 className="balance-amount">
-          {availableBalance > 0
-            ? `₹${availableBalance.toLocaleString("en-IN")}`
-            : "loading"}
+          ₹{availableBalance.toLocaleString("en-IN")}
         </h2>
 
         <p className="balance-updated">

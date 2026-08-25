@@ -33,7 +33,9 @@ function Login() {
 
       if (role === "organizer") {
         if (!organizerPassword.trim()) {
-          await supabase.auth.signOut();
+          await supabase.auth.signOut({
+            scope: "local",
+          });
 
           setError("Please enter the organizer password.");
           return;
@@ -47,13 +49,17 @@ function Login() {
         );
 
         if (organizerError) {
-          await supabase.auth.signOut();
+          await supabase.auth.signOut({
+            scope: "local",
+          });
 
           throw organizerError;
         }
 
         if (!isOrganizer) {
-          await supabase.auth.signOut();
+          await supabase.auth.signOut({
+            scope: "local",
+          });
 
           setOrganizerPassword("");
           setError("Incorrect organizer password.");
@@ -63,7 +69,7 @@ function Login() {
 
       sessionStorage.setItem("app_role", role);
 
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       console.error("Login error:", error);
 

@@ -141,7 +141,7 @@ function AllExpenses() {
           <button
             type="button"
             className="all-expenses-back-button"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/")}
             aria-label="Back"
           >
             <FontAwesomeIcon icon={faArrowLeft} />

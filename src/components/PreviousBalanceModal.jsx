@@ -165,7 +165,7 @@ function PreviousBalanceModal({ open, onClose, previousBalances, onRefresh }) {
             <button
               type="button"
               className="modal-close-button"
-              onClick={onClose}
+              onClick={showAddForm ? () => setShowAddForm(false) : onClose}
             >
               ×
             </button>

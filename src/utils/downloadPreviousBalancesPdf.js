@@ -50,18 +50,12 @@ export const downloadPreviousBalancePdf = (previousBalances, activeEvent) => {
     ],
 
     styles: {
-      fontSize: 9,
-      cellPadding: 3,
+      fontSize: 12,
+      halign: "center",
     },
 
     headStyles: {
-      fontStyle: "bold",
-    },
-
-    columnStyles: {
-      1: {
-        halign: "right",
-      },
+      fontStyle: "bolder",
     },
   });
 
@@ -83,22 +77,28 @@ export const downloadPreviousBalancePdf = (previousBalances, activeEvent) => {
     body: rows,
 
     styles: {
-      fontSize: 9,
-      cellPadding: 3,
+      fontSize: 12,
+      halign: "center",
     },
 
     headStyles: {
-      fontStyle: "bold",
+      fontStyle: "bolder",
     },
 
     columnStyles: {
       0: {
-        cellWidth: 14,
-        halign: "center",
+        cellWidth: 15,
+      },
+      1: {
+        cellWidth: 73,
       },
 
       2: {
-        halign: "right",
+        cellWidth: 53,
+      },
+
+      3: {
+        cellWidth: 40,
       },
     },
   });

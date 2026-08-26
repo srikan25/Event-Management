@@ -336,7 +336,7 @@
   width: clamp(44px, 7vw, 50px);
   height: clamp(44px, 7vw, 50px);
 
-  padding: 0 0 3px;
+  padding: 0 0 0;
 
   display: flex;
   align-items: center;

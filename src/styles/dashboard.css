@@ -523,7 +523,7 @@ button {
   cursor: pointer;
 
   margin-right: 6px;
-  padding-bottom: 3px;
+  /* padding-bottom: 3px; */
 }
 
 .add-expense-button:active {

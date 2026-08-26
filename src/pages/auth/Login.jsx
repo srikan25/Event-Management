@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, replace, useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "../../lib/supabase";
 
 function Login() {
@@ -69,7 +69,7 @@ function Login() {
 
       sessionStorage.setItem("app_role", role);
 
-      navigate("/");
+      navigate("/", { replace: true });
     } catch (error) {
       console.error("Login error:", error);
 

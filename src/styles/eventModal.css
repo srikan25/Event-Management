@@ -216,10 +216,6 @@ Previous balances card
   gap: 8px;
 }
 
-.modal-close-button {
-  padding-bottom: 4px;
-}
-
 .previous-balance-add-form {
   margin-bottom: 16px;
   padding: 14px;
@@ -385,7 +381,7 @@ Previous balances card
 
   cursor: pointer;
 
-  padding-bottom: 6px;
+  padding-bottom: 2px;
 }
 .previous-balance-add-button:disabled {
   opacity: 0.7;
